@@ -1,5 +1,6 @@
-function HomePage() {
-  return <div>Welcome to Next.js!</div>
-}
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App.jsx';
 
-export default HomePage
+ReactDOM.render(<App />, document.getElementById('app'));
+
