@@ -1,31 +1,49 @@
+div {
+  border: 1px dashed black;
+}
 
 .content {
   display: grid;
   padding: 5px;
-  grid-template: 100px 500px / 1fr 2fr 1fr;
+  grid-template: 100px 500px / 30% 50% 20%;
   margin: 0 auto;
   width: 1100px;
   height: 600px;
   border: 1px solid blue;
 }
 
+/* Left side Player List Content */
 .list {
-  width: 280px;
+  /* width: 280px; */
   border: 1px dashed green;
   grid-row: 1 / span 2;
 }
 
+.current-player {
+  border: 1px dashed black;
+  height: 80px;
+}
+
+.list-titles {
+  border: 1px dashed black;
+  height: 50px;
+  display: grid;
+  grid-template: 1fr / 35% 25% 20% 20%;
+  text-align: center;
+}
+
+.player-entry {
+  display: grid;
+  grid-template: 1fr / 35% 25% 20% 20%;
+  text-align: center;
+}
+
+/* Middle Grid */
 .instructions {
   border: 1px dashed red;
   grid-column: 2 / span 1;
   grid-row: 1 / 1;
 }
-
-.scores {
-  border: 1px dashed red;
-  grid-row: 1 / span 2;
-}
-
 
 .grid {
   display: grid;
@@ -34,4 +52,10 @@
   border: 1px dashed red;
   padding: 5px;
   grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+}
+
+/* Right side scores */
+.scores {
+  border: 1px dashed red;
+  grid-row: 1 / span 2;
 }
