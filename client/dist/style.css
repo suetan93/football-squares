@@ -2,6 +2,10 @@ div {
   border: 1px dashed black;
 }
 
+input:placeholder-shown {
+  font-style: italic;
+}
+
 .content {
   display: grid;
   padding: 5px;
@@ -20,8 +24,11 @@ div {
 }
 
 .current-player {
-  border: 1px dashed black;
-  height: 80px;
+  border: 1px dashed red;
+  height: 50px;
+  display: grid;
+  grid-template: 1fr / 35% 25% 20% 20%;
+  text-align: center;
 }
 
 .list-titles {
@@ -30,6 +37,10 @@ div {
   display: grid;
   grid-template: 1fr / 35% 25% 20% 20%;
   text-align: center;
+}
+
+.players {
+  overflow-y: auto;
 }
 
 .player-entry {
