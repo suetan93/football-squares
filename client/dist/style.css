@@ -1,5 +1,9 @@
-div {
+/* div {
   border: 1px dashed black;
+} */
+
+input {
+  padding: 3px;
 }
 
 input:placeholder-shown {
@@ -9,10 +13,10 @@ input:placeholder-shown {
 .content {
   display: grid;
   padding: 5px;
-  grid-template: 100px 500px / 30% 50% 20%;
+  grid-template: 62px 588px / 260px 588px 252px;
   margin: 0 auto;
   width: 1100px;
-  height: 600px;
+  height: 650px;
   border: 1px solid blue;
 }
 
@@ -56,12 +60,56 @@ input:placeholder-shown {
   grid-row: 1 / 1;
 }
 
-.grid {
+.board {
   display: grid;
-  width: 450px;
-  height: 450px;
-  border: 1px dashed red;
-  padding: 5px;
+  grid-template: repeat(14, 1fr) / repeat(14, 1fr);
+  border: 1px dashed purple;
+}
+
+.afc {
+  grid-row: 4 / 5;
+  grid-column: 5 / 15;
+  display: grid;
+  /* border: 1px dashed blue; */
+  grid-template: 1fr / repeat(10, 1fr);
+}
+
+.afc2 {
+  grid-row: 3 / 4;
+  grid-column: 5 / 15;
+  display: grid;
+  /* border: 1px dashed blue; */
+  grid-template: 1fr / repeat(10, 1fr);
+}
+
+.nfc {
+  grid-row: 5 / 15;
+  grid-column: 4 / 5;
+  display: grid;
+  /* border: 1px dashed blue; */
+  grid-template: repeat(10, 1fr) / 1fr;
+}
+
+.nfc2 {
+  grid-row: 5 / 15;
+  grid-column: 3 / 4;
+  display: grid;
+  /* border: 1px dashed blue; */
+  grid-template: repeat(10, 1fr) / 1fr;
+}
+
+.numbers {
+ border: 1px dashed green;
+}
+
+.grid {
+  grid-row: 5 / 15;
+  grid-column: 5 / 15;
+  display: grid;
+  width: 420px;
+  height: 420px;
+  border: 1px dashed green;
+  /* padding: 5px; */
   grid-template: repeat(10, 1fr) / repeat(10, 1fr);
 }
 

@@ -6,25 +6,32 @@ import sampleBoard from '../../../sampledata.js'
 import players from '../../../playerdata.js'
 
 const App = () => {
-  const [board, setBoard] = useState(new Array(100).fill(null));
+  const [board, setBoard] = useState(new Array(100).fill(''));
   const [currentPlayer, setPlayer] = useState(null);
   const [playerIndex, setIndex] = useState(null);
   const [playersList, setList] = useState([]);
+  const [showForm, setForm] = useState(false);
 
 
-  useEffect(() => {
-    getBoardData()}, []
-  )
+  // useEffect(() => {
+  //   getBoardData()}, []
+  // )
 
   useEffect(() => {
     getPlayersData()}, []
   )
 
+  useEffect(() => {
+    selectPlayer(playerIndex)}, [playersList]
+  )
+
   const getBoardData = () => {
+    //call to database
     setBoard(sampleBoard)
   }
 
   const getPlayersData = () => {
+    //call to database
     setList(players)
   }
 
@@ -33,12 +40,42 @@ const App = () => {
     setIndex(i)
   }
 
+  const displayForm = () => {
+    setForm(!showForm)
+  }
+
+  const addNewPlayer = (player) => {
+    let listCopy = [...playersList]
+    for (let person of listCopy) {
+      if (person.initials === player.initials) {
+        alert('Sorry, initials already exist.')
+        return;
+      }
+    }
+    listCopy.push(player)
+    setList(listCopy)
+    setIndex(listCopy.length-1)
+    displayForm();
+  }
+
+  const deletePlayer = () => {
+    let listCopy = [...playersList]
+    let boardCopy = [...board]
+    let obj = currentPlayer.squares
+    for (let box in obj) {
+      boardCopy[obj[box]] = '';
+    }
+    listCopy.splice(playerIndex, 1)
+    setList(listCopy)
+    setBoard(boardCopy)
+  }
+
   const handleClick = (i) => {
     let boardCopy = [...board]
     let listCopy = [...playersList];
     if (!currentPlayer || (boardCopy[i] && boardCopy[i] !== currentPlayer.initials)) return;
     if (boardCopy[i] === currentPlayer.initials) {
-      boardCopy[i] = null;
+      boardCopy[i] = '';
       listCopy[playerIndex].count--
       delete listCopy[playerIndex].squares[i]
     } else {
@@ -51,11 +88,6 @@ const App = () => {
     setBoard(boardCopy);
   }
 
-  const addNewPlayer = (player) => {
-    let listCopy = [...playersList]
-    listCopy.push(player)
-    setList(listCopy)
-  }
 
   return (
     <div>
@@ -64,7 +96,14 @@ const App = () => {
       </header>
       <br />
       <main className="content">
-        <PlayerList players={playersList} selectPlayer={selectPlayer} currentPlayer={currentPlayer} addNewPlayer={addNewPlayer} />
+        <PlayerList
+          players={playersList}
+          selectPlayer={selectPlayer}
+          currentPlayer={currentPlayer}
+          addNewPlayer={addNewPlayer}
+          deletePlayer={deletePlayer}
+          displayForm={displayForm}
+          showForm={showForm} />
         <div className="instructions">
           How to play:
         </div>

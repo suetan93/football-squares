@@ -6,9 +6,14 @@ const AddForm = ({ displayForm, addNewPlayer }) => {
   const [initials, setInitials] = useState('');
 
   const handleSubmit = () => {
+    if (firstName === '' || lastName === '' || initials === '') {
+      alert('Missing fields')
+      return
+    }
+
     let newPlayer = {
-      firstName: firstName,
-      lastName: lastName,
+      firstName: firstName.toUpperCase(),
+      lastName: lastName.toUpperCase(),
       initials: initials,
       count: 0,
       squares: {}
@@ -18,7 +23,6 @@ const AddForm = ({ displayForm, addNewPlayer }) => {
     setFirst('')
     setLast('')
     setInitials('')
-    displayForm();
   }
 
   return (
