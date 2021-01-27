@@ -90,9 +90,9 @@ const App = () => {
 
 
   return (
-    <div>
+    <div className="app">
       <header>
-        <h1>Superbowl Squares</h1>
+        <h1>SUPERBOWL SQUARES</h1>
       </header>
       <br />
       <main className="content">
@@ -104,11 +104,11 @@ const App = () => {
           deletePlayer={deletePlayer}
           displayForm={displayForm}
           showForm={showForm} />
-        <div className="instructions">
+        {/* <div className="instructions">
           How to play:
-        </div>
-        <Scores />
+        </div> */}
         <Board squares={board} handleClick={handleClick} />
+        <Scores />
       </main>
     </div>
   )

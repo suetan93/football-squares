@@ -28,30 +28,30 @@ const AddForm = ({ displayForm, addNewPlayer }) => {
   return (
     <div className="form">
       <label>
-        First Name:
+        FIRST NAME:&nbsp;<br/>
         <input
           type="text"
           value={firstName}
           onChange={(e) => setFirst(e.target.value)} />
       </label>
-      <br />
+      <br /><br />
       <label>
-        Last Name:
+        LAST NAME:&nbsp;<br/>
         <input
           type="text"
           value={lastName}
           onChange={(e) => setLast(e.target.value)} />
       </label>
-      <br />
+      <br /><br />
       <label>
-        Initials:
+        INITIALS:&nbsp;<br/>
         <input type="text"
           value={initials}
-          placeholder="4 characters max"
+          placeholder="4 character limit"
           maxLength="4"
           onChange={(e) => setInitials(e.target.value)} />
       </label>
-      <br />
+      <br /><br />
       <button onClick={handleSubmit}>Add Player</button> <button onClick={displayForm}>Cancel</button>
 
     </div>
