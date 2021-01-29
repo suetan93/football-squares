@@ -39,7 +39,7 @@ const Board = ({ squares, handleClick }) => {
             {blank.map((box, i) => <div className="empty" key={i}></div>)}
           </div>
           <div className="grid">
-            {squares.map((square, i) => (<Square key={i} value={square} handleClick={() => handleClick(i)}/>))}
+            {squares.map((square, i) => (<Square key={i} index={i} value={square} handleClick={() => handleClick(i)}/>))}
           </div>
         </div>
       </div>

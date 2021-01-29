@@ -36,10 +36,10 @@ const Scores = () => {
           </div>
           <br />
           <div className="inner-box">
-            <div className="winner1">
+            <div className="winner1" align="right">
               <b>1ST HALF:</b>
             </div>
-            <div className="winner2">
+            <div className="winner2" align="right">
               <b>FINAL SCORE:</b>
             </div>
           </div>

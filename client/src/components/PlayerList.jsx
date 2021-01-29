@@ -21,7 +21,7 @@ const PlayerList = ({ players, selectPlayer, currentPlayer, addNewPlayer, displa
             {currentPlayer ? currentPlayer.count : '----'}
           </div>
           <div className="current-info">
-            {currentPlayer ? <button onClick={displayAlert}>X</button> : null}
+            {currentPlayer ? <button title="Delete Player" onClick={displayAlert}>X</button> : null}
           </div>
         </div>
         <center>
@@ -39,10 +39,13 @@ const PlayerList = ({ players, selectPlayer, currentPlayer, addNewPlayer, displa
           <div className="title">INITIALS</div>
           <div className="title">#SQs</div>
         </div>
-        <div className="players">
-          {players ? players.map((player, i) => (<PlayerEntry player={player} key={i} selectPlayer={() => selectPlayer(i)} />)) : 'No players'}
+        <div className="flip">
+          <div className="players">
+            {players ? players.map((player, i) => (<PlayerEntry player={player} key={i} selectPlayer={() => selectPlayer(i)} />)) : 'No players'}
+          </div>
         </div>
       </div>
+
     </div>
 
   )

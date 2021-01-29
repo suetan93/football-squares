@@ -11,6 +11,7 @@ body {
 
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -44,9 +45,8 @@ input {
   width: 185px;
 }
 
-
 h1 {
-  color:rgb(116, 60, 116)
+  color:#743c74;
 }
 
 h4 {
@@ -151,10 +151,6 @@ input:placeholder-shown {
   padding: 5px;
   font-size: 12px;
   text-align: left;
-
-  /* animation-name: moveInDown;
-  animation-duration: 1s;
-  animation-timing-function: ease-out; */
 }
 
 .expand {
@@ -171,22 +167,25 @@ input:placeholder-shown {
   border: 0px dashed black;
   height: 25px;
   display: grid;
-  grid-template: 1fr / 35% 25% 23% 17%;
+  grid-template: 1fr / 40% 26% 16% 13%;
   text-align: center;
   font-size: 12px;
   font-weight: bold;
-  padding-top: 5px;
-  /* border-bottom: 0px solid rgb(228, 155, 155); */
+  padding-top: 7px;
 }
 
 .title {
   border: 0px dashed black;
 }
 
-.players {
-  padding: 0px;
-  height: 412px;
+.flip {
+  direction: rtl;
+  height: 410px;
   overflow-y: auto;
+}
+
+.players {
+  direction: ltr;
 }
 
 .player-entry {
@@ -294,11 +293,11 @@ input:placeholder-shown {
 }
 
 .first-half {
-  background-color:rgb(216, 112, 129);
+  background-color:rgba(216, 112, 129, 0.651);
 }
 
 .final {
-  background-color:rgb(116, 60, 116);
+  background-color:rgba(163, 107, 163, 0.466);
 }
 
 .grid {
@@ -323,6 +322,10 @@ input:placeholder-shown {
 
 .square:hover {
   border: 1px solid;
+}
+
+.highlight {
+  background-color: #ffffe0;
 }
 
 /* Right side scores */
@@ -350,12 +353,14 @@ input:placeholder-shown {
 
 .winner1 {
   padding: 5px;
-  background-color:rgb(216, 112, 129);
+  width: 90px;
+  background-color: rgba(216, 112, 129, 0.651);
 }
 
 .winner2 {
   padding: 5px;
-  background-color: rgb(116, 60, 116);
+  width: 90px;
+  background-color: rgba(163, 107, 163, 0.466);
 }
 
 .main-title {

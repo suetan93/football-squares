@@ -9,6 +9,7 @@ import players from '../../../playerdata.js'
 const App = () => {
   const [board, setBoard] = useState(new Array(100).fill(''));
   const [currentPlayer, setPlayer] = useState(null);
+  const [previousPlayer, setPrevious] = useState(null);
   const [playerIndex, setIndex] = useState(null);
   const [playersList, setList] = useState([]);
   const [showForm, setForm] = useState(false);
@@ -27,9 +28,9 @@ const App = () => {
     selectPlayer(playerIndex)}, [playersList]
   )
 
-  // useEffect(() => {
-  //   highlightSquares(), [currentPlayer]}
-  // )
+  useEffect(() => {
+    highlightSquares(), [currentPlayer]}
+  )
 
   const getBoardData = () => {
     //call to database
@@ -42,6 +43,7 @@ const App = () => {
   }
 
   const selectPlayer = (i) => {
+    removeHighlight()
     setPlayer(playersList[i])
     setIndex(i)
   }
@@ -90,8 +92,21 @@ const App = () => {
     if (currentPlayer) {
       let obj = currentPlayer.squares
       for (let key in obj) {
-        let box = boardCopy[obj[key]]
-        console.log(box)
+        let value = obj[key]
+        let el = document.querySelector(`#A${value}`)
+        el.style.backgroundColor = "#FFFFE0"
+      }
+    }
+    setPrevious(currentPlayer)
+  }
+
+  const removeHighlight = () => {
+    if (currentPlayer) {
+      let obj = currentPlayer.squares
+      for (let key in obj) {
+        let value = obj[key]
+        let el = document.querySelector(`#A${value}`)
+        el.style.backgroundColor = "#f5f5f5"
       }
     }
   }
