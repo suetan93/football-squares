@@ -32,6 +32,7 @@ const AddForm = ({ displayForm, addNewPlayer }) => {
         <input
           type="text"
           value={firstName}
+          maxLength="12"
           onChange={(e) => setFirst(e.target.value)} />
       </label>
       <br /><br />
@@ -47,8 +48,8 @@ const AddForm = ({ displayForm, addNewPlayer }) => {
         INITIALS:&nbsp;<br/>
         <input type="text"
           value={initials}
-          placeholder="4 character limit"
-          maxLength="4"
+          placeholder="3 character limit"
+          maxLength="3"
           onChange={(e) => setInitials(e.target.value)} />
       </label>
       <br /><br />

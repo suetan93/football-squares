@@ -4,10 +4,18 @@ const PlayerEntry = ({ player, selectPlayer }) => {
 
   return (
     <div className="player-entry">
-      <div>{player.firstName} {player.lastName[0]}</div>
-      <div>{player.initials}</div>
-      <div>{player.count}</div>
-      <button onClick={selectPlayer}>Select</button>
+      <div className="player-info">
+        {player.firstName} {player.lastName[0]}
+      </div>
+      <div className="player-info">
+        {player.initials}
+      </div>
+      <div className="player-info">
+        {player.count}
+      </div>
+      <div className="player-info">
+        <button onClick={selectPlayer}>Select</button>
+      </div>
     </div>
   )
 };

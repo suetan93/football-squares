@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Board from './Board.jsx';
 import PlayerList from './PlayerList.jsx';
 import Scores from './Scores.jsx';
+import AlertBox from './AlertBox.jsx'
 import sampleBoard from '../../../sampledata.js'
 import players from '../../../playerdata.js'
 
@@ -11,6 +12,7 @@ const App = () => {
   const [playerIndex, setIndex] = useState(null);
   const [playersList, setList] = useState([]);
   const [showForm, setForm] = useState(false);
+  const [showAlert, setAlert] = useState(false);
 
 
   // useEffect(() => {
@@ -24,6 +26,10 @@ const App = () => {
   useEffect(() => {
     selectPlayer(playerIndex)}, [playersList]
   )
+
+  // useEffect(() => {
+  //   highlightSquares(), [currentPlayer]}
+  // )
 
   const getBoardData = () => {
     //call to database
@@ -41,6 +47,8 @@ const App = () => {
   }
 
   const displayForm = () => {
+    let box = document.querySelector('.player-box');
+    box.classList.toggle('expand');
     setForm(!showForm)
   }
 
@@ -58,6 +66,10 @@ const App = () => {
     displayForm();
   }
 
+  const displayAlert = () => {
+    setAlert(!showAlert);
+  }
+
   const deletePlayer = () => {
     let listCopy = [...playersList]
     let boardCopy = [...board]
@@ -66,8 +78,22 @@ const App = () => {
       boardCopy[obj[box]] = '';
     }
     listCopy.splice(playerIndex, 1)
+    setIndex(null)
+    setPlayer(null)
     setList(listCopy)
     setBoard(boardCopy)
+    displayAlert()
+  }
+
+  const highlightSquares = () => {
+    let boardCopy = [...board]
+    if (currentPlayer) {
+      let obj = currentPlayer.squares
+      for (let key in obj) {
+        let box = boardCopy[obj[key]]
+        console.log(box)
+      }
+    }
   }
 
   const handleClick = (i) => {
@@ -91,8 +117,9 @@ const App = () => {
 
   return (
     <div className="app">
+      {showAlert ? <AlertBox displayAlert={displayAlert} deletePlayer={deletePlayer} /> : null}
       <header>
-        <h1>SUPERBOWL SQUARES</h1>
+        <p className="main-title">SUPERBOWL LV SQUARES</p>
       </header>
       <br />
       <main className="content">
@@ -101,12 +128,9 @@ const App = () => {
           selectPlayer={selectPlayer}
           currentPlayer={currentPlayer}
           addNewPlayer={addNewPlayer}
-          deletePlayer={deletePlayer}
+          displayAlert={displayAlert}
           displayForm={displayForm}
           showForm={showForm} />
-        {/* <div className="instructions">
-          How to play:
-        </div> */}
         <Board squares={board} handleClick={handleClick} />
         <Scores />
       </main>

@@ -1,25 +1,81 @@
 body {
   font-family: arial, sans-serif;
-  background-color: black;
-  padding: 15px;
+  background-color: rgb(12, 12, 12);
+  padding: 40px;
 }
 
-/* div {
-  border: 1px dashed black;
-} */
+::-webkit-scrollbar {
+  width: 10px;
+  padding: 5px;
+}
 
-header {
-  background-image: url('images/footballfield.jpg');
-  background-size: cover;
-  border-radius: 0px 0px 0px 0px;
-  color:black;
-  width: 100%;
-  height: 250px;
-  margin: 0 auto;
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(53, 52, 52);
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+button {
+  outline: none;
+  background-color:rgb(58, 54, 55);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color:white;
+  font-size: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid black;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  border: 2px solid;
+  background-color: white;
+  color: black;
 }
 
 input {
-  padding: 3px;
+  padding: 5px;
+  width: 185px;
+}
+
+
+h1 {
+  color:rgb(116, 60, 116)
+}
+
+h4 {
+  margin: 0px;
+}
+
+#add {
+  width: 100%;
+}
+
+header {
+  /* background-image: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.548),
+    rgba(40, 180, 133, 0.356)),
+    url('images/footballfield.jpg'); */
+  background-image: url('images/ffbg.jpg');
+  background-size: cover;
+  border-radius: 0px 0px 0px 0px;
+  color: white;
+  width: 1220px;
+  height: 320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 5px;
+  font-size: 40px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 input:placeholder-shown {
@@ -27,14 +83,14 @@ input:placeholder-shown {
 }
 
 .app {
-  background-color: black;
-  border: 1px dashed white;
-  padding: 30px;
+  background-color: rgb(12, 12, 12);
+  border: 0px dashed white;
+  padding: 10px;
 }
 
 .modules {
   background-color: white;
-  border: 0px solid rgb(129, 124, 124);
+  border: 1px solid gray;
   border-radius: 0px;
   padding: 7px;
 }
@@ -43,6 +99,8 @@ input:placeholder-shown {
   background-color:rgb(0, 0, 0);
   color: rgb(216, 112, 129);
   font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
   text-align: center;
   border-radius: 1px 1px 0px 0px;
   padding: 5px;
@@ -50,24 +108,23 @@ input:placeholder-shown {
 
 .content {
   background-color: transparent;
-  border: 0px solid blue;
+  border: 0px solid white;
   border-radius: 0px;
   box-shadow: 0px -2px 15px 2px rgba(255, 255, 255, 0.4);
   z-index: 10;
   display: grid;
-  grid-template: 1fr / 260px 588px 252px;
-  column-gap: 5px;
-  padding: 30px;
-  width: 1100px;
-  height: 620px;
+  grid-template: 1fr / 270px 588px 270px;
+  column-gap: 8px;
+  padding: 20px;
+  width: 1140px;
+  height: 625px;
   overflow: auto;
-  margin: -75px auto auto 75px;
-
+  margin: -90px auto auto auto;
 }
 
 /* Left side Player List Content */
 .list {
-  border: 1px dashed red;
+  border: 0px dashed red;
   padding: 4px;
 }
 
@@ -75,58 +132,87 @@ input:placeholder-shown {
   border: 0px dashed red;
   height: 40px;
   display: grid;
-  grid-template: 1fr / 35% 25% 20% 20%;
+  grid-template: 1fr / 45% 20% 15% 20%;
   text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.current-info, .player-info {
+  border: 0px dashed green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .form {
+  border: 0px dashed red;
+  width: 200px;
+  padding: 5px;
   font-size: 12px;
+  text-align: left;
+
+  /* animation-name: moveInDown;
+  animation-duration: 1s;
+  animation-timing-function: ease-out; */
 }
 
-.player-list {
-  margin-top: 30px;
+.expand {
+  animation-name: moveInDown;
+  animation-duration: .5s;
+  animation-timing-function: ease-out;
+}
+
+.player-list, .payout, .winners {
+  margin-top: 25px;
 }
 
 .list-titles {
-  border: 1px dashed black;
-  height: 30px;
+  border: 0px dashed black;
+  height: 25px;
   display: grid;
-  grid-template: 1fr / 35% 25% 20% 20%;
+  grid-template: 1fr / 35% 25% 23% 17%;
   text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  padding-top: 5px;
+  /* border-bottom: 0px solid rgb(228, 155, 155); */
+}
+
+.title {
+  border: 0px dashed black;
 }
 
 .players {
-  padding: 5px;
-  height: 353px;
+  padding: 0px;
+  height: 412px;
   overflow-y: auto;
 }
 
 .player-entry {
   display: grid;
-  grid-template: 1fr / 35% 25% 20% 20%;
+  grid-template: 1fr / 40% 20% 18% 22%;
   text-align: center;
-  padding: 5px;
+  font-size: 11px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 1px solid rgb(216, 112, 129);
 }
 
 /* Middle Grid */
-.instructions {
-  background-color: white;
-  border: 1px dashed red;
-  grid-column: 2 / span 1;
-  grid-row: 1 / 1;
-  margin: 5px;
-}
 
 .middle {
   background-color: transparent;
   display: flex;
   justify-content: center;
-  border: 1px dashed red;
+  border: 0px dashed red;
   padding: 4px;
+  height: 614px;
 }
 
 .padding {
   background-color: white;
+  border: 1px solid gray;
   padding: 8px;
 }
 
@@ -207,6 +293,14 @@ input:placeholder-shown {
   text-align: center;
 }
 
+.first-half {
+  background-color:rgb(216, 112, 129);
+}
+
+.final {
+  background-color:rgb(116, 60, 116);
+}
+
 .grid {
   grid-row: 5 / 15;
   grid-column: 5 / 15;
@@ -218,10 +312,96 @@ input:placeholder-shown {
 
 .square {
   border: 1px solid black;
+  background-color: rgb(245, 245, 245);
+  border-radius: 0px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  height: 40px;
+  padding: 0px;
+}
+
+.square:hover {
+  border: 1px solid;
 }
 
 /* Right side scores */
 .scores {
-  border: 1px dashed red;
-  /* grid-row: 1 / span 1; */
+  padding: 4px;
+  border: 0px dashed red;
+  font-size: 12px;
 }
+
+.instructions {
+  border: 0px dashed red;
+  padding: 5px;
+  height: 238px;
+}
+
+.prize {
+  line-height: 4px;
+  padding: 5px;
+}
+
+.inner-box {
+  padding: 5px;
+  color: white;
+}
+
+.winner1 {
+  padding: 5px;
+  background-color:rgb(216, 112, 129);
+}
+
+.winner2 {
+  padding: 5px;
+  background-color: rgb(116, 60, 116);
+}
+
+.main-title {
+  animation-name: moveInLeft;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+}
+
+.player-box {
+  overflow: hidden;
+}
+
+.alert {
+  background-color: rgb(231, 231, 231);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 290px;
+  color: black;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 15px;
+  z-index: 5;
+  font-size: 14px;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInDown {
+  0% {
+    height: 90px;
+  }
+
+  100% {
+    height: 280px;
+  }
+}
+
