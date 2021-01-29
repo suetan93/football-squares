@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const AddForm = ({ displayForm, addNewPlayer }) => {
+const AddForm = ({ players, displayForm, addNewPlayer }) => {
   const [firstName, setFirst] = useState('');
   const [lastName, setLast] = useState('');
   const [initials, setInitials] = useState('');
@@ -17,6 +17,14 @@ const AddForm = ({ displayForm, addNewPlayer }) => {
       initials: initials,
       count: 0,
       squares: {}
+    }
+
+    for (let person of players) {
+      if (person.initials.toLowerCase() === newPlayer.initials.toLowerCase()) {
+        alert('Sorry, initials already exist.')
+        setInitials('')
+        return;
+      }
     }
 
     addNewPlayer(newPlayer)

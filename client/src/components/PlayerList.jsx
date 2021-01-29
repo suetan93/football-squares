@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import PlayerEntry from './PlayerEntry.jsx';
 import AddForm from './AddForm.jsx';
 
-const PlayerList = ({ players, selectPlayer, currentPlayer, addNewPlayer, displayAlert, displayForm, showForm }) => {
+const PlayerList = ({ grid, players, selectPlayer, currentPlayer, addNewPlayer, displayAlert, displayForm, showForm }) => {
 
   return (
     <div className="list">
@@ -26,7 +26,7 @@ const PlayerList = ({ players, selectPlayer, currentPlayer, addNewPlayer, displa
         </div>
         <center>
           {!showForm ? <button id="add" onClick={displayForm}>Add New Player</button> : null}
-          {showForm ? <AddForm displayForm={displayForm} addNewPlayer={addNewPlayer} /> : null}
+          {showForm ? <AddForm players={players} displayForm={displayForm} addNewPlayer={addNewPlayer} /> : null}
         </center>
       </div>
 

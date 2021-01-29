@@ -9,7 +9,7 @@ import players from '../../../playerdata.js'
 const App = () => {
   const [board, setBoard] = useState(new Array(100).fill(''));
   const [currentPlayer, setPlayer] = useState(null);
-  const [previousPlayer, setPrevious] = useState(null);
+  const [currentSquares, setSquares] = useState(null);
   const [playerIndex, setIndex] = useState(null);
   const [playersList, setList] = useState([]);
   const [showForm, setForm] = useState(false);
@@ -28,10 +28,6 @@ const App = () => {
     selectPlayer(playerIndex)}, [playersList]
   )
 
-  useEffect(() => {
-    highlightSquares(), [currentPlayer]}
-  )
-
   const getBoardData = () => {
     //call to database
     setBoard(sampleBoard)
@@ -43,9 +39,9 @@ const App = () => {
   }
 
   const selectPlayer = (i) => {
-    removeHighlight()
     setPlayer(playersList[i])
     setIndex(i)
+    // setSquares(playersList[i].squares)
   }
 
   const displayForm = () => {
@@ -56,12 +52,6 @@ const App = () => {
 
   const addNewPlayer = (player) => {
     let listCopy = [...playersList]
-    for (let person of listCopy) {
-      if (person.initials === player.initials) {
-        alert('Sorry, initials already exist.')
-        return;
-      }
-    }
     listCopy.push(player)
     setList(listCopy)
     setIndex(listCopy.length-1)
@@ -97,19 +87,18 @@ const App = () => {
         el.style.backgroundColor = "#FFFFE0"
       }
     }
-    setPrevious(currentPlayer)
   }
 
-  const removeHighlight = () => {
-    if (currentPlayer) {
-      let obj = currentPlayer.squares
-      for (let key in obj) {
-        let value = obj[key]
-        let el = document.querySelector(`#A${value}`)
-        el.style.backgroundColor = "#f5f5f5"
-      }
-    }
-  }
+  // const removeHighlight = () => {
+  //   if (previousPlayer) {
+  //     let obj = previousPlayer.squares
+  //     for (let key in obj) {
+  //       let value = obj[key]
+  //       let el = document.querySelector(`#A${value}`)
+  //       el.style.backgroundColor = "#f5f5f5"
+  //     }
+  //   }
+  // }
 
   const handleClick = (i) => {
     let boardCopy = [...board]

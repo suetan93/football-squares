@@ -30,20 +30,20 @@ const Scores = () => {
           </center>
         </div>
       </div>
-        <div className="modules winners">
-          <div className="headings">
-            WINNERS
+      <div className="modules winners">
+        <div className="headings">
+          WINNERS
+        </div>
+        <br />
+        <div className="inner-box">
+          <div className="winner1" align="right">
+            <b>1ST HALF:</b>
           </div>
-          <br />
-          <div className="inner-box">
-            <div className="winner1" align="right">
-              <b>1ST HALF:</b>
-            </div>
-            <div className="winner2" align="right">
-              <b>FINAL SCORE:</b>
-            </div>
+          <div className="winner2" align="right">
+            <b>FINAL SCORE:</b>
           </div>
         </div>
+      </div>
     </div>
 
   )

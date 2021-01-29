@@ -1,0 +1,16 @@
+type Board {
+  grid: [Int]
+}
+
+type Player {
+  firstName: String
+  lastName: String
+  initials: String
+  count: Int
+  squares: String
+}
+
+type Query {
+  allPlayers: [Player]!
+  allSquares: Board
+}
