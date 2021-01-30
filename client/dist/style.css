@@ -349,21 +349,40 @@ input:placeholder-shown {
 .winners {
   height: 100px;
 }
-.inner-box {
+.innerbox {
   padding: 5px;
-  color: white;
+  width: 190px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.innerbox1, .innerbox2 {
+  padding: 5px;
+  width: 90px;
+  /* color: white;
+  background-color: #d87081a6; */
 }
 
 .winner1 {
   padding: 5px;
-  width: 90px;
-  background-color: rgba(216, 112, 129, 0.651);
+  width: 80px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  background-color: #d87081a6;
 }
 
 .winner2 {
   padding: 5px;
-  width: 90px;
-  background-color: rgba(163, 107, 163, 0.466);
+  width: 80px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  /* color: #5a3c3c; */
+  background-color: #a36ba377;
 }
 
 .main-title {
@@ -413,3 +432,7 @@ input:placeholder-shown {
   }
 }
 
+ul {
+  padding-left: 15px;
+  list-style-type: square;
+}

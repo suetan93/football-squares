@@ -28,6 +28,10 @@ const App = () => {
     selectPlayer(playerIndex)}, [playersList]
   )
 
+  useEffect(() => {
+    highlightSquares()}
+  )
+
   const getBoardData = () => {
     //call to database
     setBoard(sampleBoard)
@@ -84,7 +88,7 @@ const App = () => {
       for (let key in obj) {
         let value = obj[key]
         let el = document.querySelector(`#A${value}`)
-        el.style.backgroundColor = "#FFFFE0"
+        el.style.backgroundColor = "#5a3c3c"
       }
     }
   }
