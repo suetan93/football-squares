@@ -88,7 +88,7 @@ const App = () => {
       for (let key in obj) {
         let value = obj[key]
         let el = document.querySelector(`#A${value}`)
-        el.style.backgroundColor = "#5a3c3c"
+        el.style.backgroundColor = "#FFFCCB"
       }
     }
   }
