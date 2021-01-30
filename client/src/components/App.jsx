@@ -15,7 +15,6 @@ const App = () => {
   const [showForm, setForm] = useState(false);
   const [showAlert, setAlert] = useState(false);
 
-
   // useEffect(() => {
   //   getBoardData()}, []
   // )
@@ -28,9 +27,9 @@ const App = () => {
     selectPlayer(playerIndex)}, [playersList]
   )
 
-  useEffect(() => {
-    highlightSquares()}
-  )
+  // useEffect(() => {
+  //   highlightSquares()}
+  // )
 
   const getBoardData = () => {
     //call to database
@@ -124,10 +123,11 @@ const App = () => {
 
 
   return (
+
     <div className="app">
       {showAlert ? <AlertBox displayAlert={displayAlert} deletePlayer={deletePlayer} /> : null}
       <header>
-        <p className="main-title">SUPERBOWL LV SQUARES</p>
+        <p className="main-title">SUPER BOWL LV SQUARES</p>
       </header>
       <br />
       <main className="content">
@@ -143,6 +143,7 @@ const App = () => {
         <Scores />
       </main>
     </div>
+
   )
 };
 
