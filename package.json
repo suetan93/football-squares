@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "squares",
   "main": "index.js",
-  "engines": {
-    "node": "12.18.1"
-  },
   "scripts": {
     "start": "node server/index.js",
     "build": "webpack --watch"
