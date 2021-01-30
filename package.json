@@ -22,22 +22,15 @@
     "url": "https://github.com/suetan93/football-squares/issues"
   },
   "dependencies": {
-    "@heroku/buildpack-registry": "^1.0.1",
-    "async-file": "^2.0.2",
     "axios": "^0.21.1",
-    "cli-ux": "^4.9.3",
     "express": "^4.17.1",
     "express-graphql": "^0.12.0",
-    "got": "^9.6.0",
     "graphql": "^15.5.0",
-    "heroku": "^7.47.11",
     "mongodb": "^3.6.3",
     "nodemon": "^2.0.7",
     "npm": "^6.14.11",
-    "phoenix": "^1.5.7",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "util": "^0.12.3"
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
