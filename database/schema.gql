@@ -1,5 +1,5 @@
 type Board {
-  grid: [Int]
+  grid: [String]
 }
 
 type Player {
