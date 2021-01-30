@@ -15,7 +15,7 @@ const Scores = () => {
             <li>Select any available square(s) on the board you want to claim</li>
             <li>Squares can be toggled to add or remove your initials</li>
           </ul>
-          <p>A winner will be determined with the score at the end of the 1st half and at the end of the game. The winner is determined by looking at the last number in each teams' score, and then matching those numbers on the grid and seeing which square intersects those two numbers.</p>
+          <p>A winner will be determined with the score at the end of the 1st half and at the end of the game. The winner is determined by looking at the last number in each team's score, and then matching those numbers on the grid and seeing which square intersects those two numbers.</p>
           <p style={{color: "#743c74", fontSize: "14px", fontWeight: "bold", fontStyle: "italic"}}>*BOARD WILL BE LOCKED WHEN ALL SQUARES ARE FILLED*</p>
         </div>
       </div>
