@@ -5,7 +5,7 @@
   "main": "index.js",
   "engines": {
     "node": "12.18.1"
-  }
+  },
   "scripts": {
     "start": "NODE_ENV=production node server/index.js",
     "build": "webpack --watch"
