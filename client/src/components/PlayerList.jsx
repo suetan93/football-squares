@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import PlayerEntry from './PlayerEntry.jsx';
 import AddForm from './AddForm.jsx';
 
-const PlayerList = ({ grid, players, selectPlayer, currentPlayer, addNewPlayer, displayAlert, displayForm, showForm }) => {
+const PlayerList = ({ grid, players, selectPlayer, clearPlayer, currentPlayer, addNewPlayer, displayAlert, displayForm, showForm }) => {
 
   return (
     <div className="list">
@@ -21,13 +21,14 @@ const PlayerList = ({ grid, players, selectPlayer, currentPlayer, addNewPlayer, 
             {currentPlayer ? currentPlayer.count : '----'}
           </div>
           <div className="current-info">
-            {currentPlayer ? <button title="Delete Player" onClick={displayAlert}>X</button> : null}
+            {currentPlayer ? <button title="Clear" onClick={clearPlayer}>X</button> : null}
           </div>
         </div>
-        <center>
-          {!showForm ? <button id="add" onClick={displayForm}>Add New Player</button> : null}
+        <div align="center">
+          {currentPlayer ? <button id="delete" title="Delete Player" onClick={displayAlert}>Delete Player</button> : null}
+          {!showForm && !currentPlayer ? <button id="add" onClick={displayForm}>Add New Player</button> : null}
           {showForm ? <AddForm players={players} displayForm={displayForm} addNewPlayer={addNewPlayer} /> : null}
-        </center>
+        </div>
       </div>
 
       <div className="modules player-list">

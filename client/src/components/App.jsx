@@ -96,6 +96,10 @@ const App = () => {
 
   }
 
+  const clearPlayer = () => {
+    setPlayer(null)
+  }
+
   // const highlightSquares = () => {
   //   let boardCopy = [...board]
   //   if (currentPlayer) {
@@ -160,6 +164,7 @@ const App = () => {
         <PlayerList
           players={playersList}
           selectPlayer={selectPlayer}
+          clearPlayer={clearPlayer}
           currentPlayer={currentPlayer}
           addNewPlayer={addNewPlayer}
           displayAlert={displayAlert}
