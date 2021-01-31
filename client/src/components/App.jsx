@@ -106,20 +106,31 @@ const App = () => {
 
   const handleClick = (i) => {
     let boardCopy = [...board]
-    let listCopy = [...playersList];
+    let listCopy = [...playersList]
+    let player = listCopy[playerIndex]
     if (!currentPlayer || (boardCopy[i] && boardCopy[i] !== currentPlayer.initials)) return;
     if (boardCopy[i] === currentPlayer.initials) {
       boardCopy[i] = '';
-      listCopy[playerIndex].count--
-      delete listCopy[playerIndex].squares[i]
+      player.count--
+      delete player.squares[i]
     } else {
       boardCopy[i] = currentPlayer.initials
-      listCopy[playerIndex].count++
-      listCopy[playerIndex].squares[i] = i
+      player.count++
+      if (!player.squares) player.squares = {}
+      player.squares[i] = i
     }
-    //must also update DB with new board and players
-    setList(listCopy)
+    setList(listCopy);
     setBoard(boardCopy);
+    //must also update DB with new board and players
+    axios.put('/board', {grid: boardCopy, id: 1})
+      .then(success => console.log(success.data))
+      .catch(console.log)
+
+    axios.patch('/player',
+      {player: {initials: player.initials},
+      update: {count: player.count, squares: player.squares}})
+      .then(success => console.log(success.data))
+      .catch(console.log)
   }
 
 

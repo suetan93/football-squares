@@ -55,7 +55,8 @@ app.post('/player', (req, res) => {
 })
 
 app.patch('/player', (req, res) => {
-  db.updatePlayer(req.body.player, req.body.update, (err, result) => {
+  let {player, update} = req.body
+  db.updatePlayer(player, update, (err, result) => {
     if (err) {
       res.status(500).send(err)
     } else {
@@ -69,7 +70,7 @@ app.delete('/player', (req, res) => {
     if (err) {
       res.status(500).send(err)
     } else {
-      res.status(200).send('Player deleted')
+      res.status(202).send('Player deleted')
     }
   })
 })
