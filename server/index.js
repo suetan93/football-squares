@@ -66,6 +66,7 @@ app.patch('/player', (req, res) => {
 })
 
 app.delete('/player', (req, res) => {
+  console.log(req.body)
   db.deletePlayer(req.body, (err, result) => {
     if (err) {
       res.status(500).send(err)

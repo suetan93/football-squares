@@ -60,6 +60,10 @@ const App = () => {
     setList(listCopy)
     setIndex(listCopy.length-1)
     displayForm();
+
+    axios.post('/player', player)
+      .then(success => console.log(success.data))
+      .catch(console.log)
   }
 
   const displayAlert = () => {
@@ -69,16 +73,27 @@ const App = () => {
   const deletePlayer = () => {
     let listCopy = [...playersList]
     let boardCopy = [...board]
-    let obj = currentPlayer.squares
+    let obj = currentPlayer.squares || {}
+
     for (let box in obj) {
       boardCopy[obj[box]] = '';
     }
+
+    axios.delete('/player', {data: {initials: currentPlayer.initials}})
+      .then(success => console.log(success.data))
+      .catch(console.log)
+
+    axios.put('/board', {grid: boardCopy, id: 1})
+      .then(success => console.log(success.data))
+      .catch(console.log)
+
     listCopy.splice(playerIndex, 1)
     setIndex(null)
     setPlayer(null)
     setList(listCopy)
     setBoard(boardCopy)
     displayAlert()
+
   }
 
   // const highlightSquares = () => {
@@ -121,7 +136,7 @@ const App = () => {
     }
     setList(listCopy);
     setBoard(boardCopy);
-    //must also update DB with new board and players
+
     axios.put('/board', {grid: boardCopy, id: 1})
       .then(success => console.log(success.data))
       .catch(console.log)
@@ -132,7 +147,6 @@ const App = () => {
       .then(success => console.log(success.data))
       .catch(console.log)
   }
-
 
   return (
 
