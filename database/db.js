@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 // const mongoURI = require('./config.js');
 
-const uri = process.env.TOKEN;
+const uri = "mongodb+srv://suetan93:oakland510@football-squares.mpnbv.mongodb.net/football-squares?retryWrites=true&w=majority";
 
 mongoose.connect(uri, {
   useNewUrlParser: true,
