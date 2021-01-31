@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 // const mongoURI = require('./config.js');
 
-const uri = mongoURI.TOKEN || process.env.TOKEN;
+const uri = process.env.TOKEN;
 
 mongoose.connect(uri, {
   useNewUrlParser: true,
