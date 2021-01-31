@@ -12,6 +12,8 @@ mongoose.connect(uri, {
 })
 .catch(err => console.log(err))
 
+mongoose.set('useFindAndModify', false);
+
 const BoardSchema = new mongoose.Schema({
   id: Number,
   grid: [String]

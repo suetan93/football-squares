@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Axios from 'axios';``
+import axios from 'axios';``
 import Board from './Board.jsx';
 import PlayerList from './PlayerList.jsx';
 import Scores from './Scores.jsx';
 import AlertBox from './AlertBox.jsx'
-import sampleBoard from '../../../sampledata.js'
-import players from '../../../playerdata.js'
 
 const App = () => {
   const [board, setBoard] = useState(new Array(100).fill(''));
@@ -16,9 +14,9 @@ const App = () => {
   const [showForm, setForm] = useState(false);
   const [showAlert, setAlert] = useState(false);
 
-  // useEffect(() => {
-  //   getBoardData()}, []
-  // )
+  useEffect(() => {
+    getBoardData()}, []
+  )
 
   useEffect(() => {
     getPlayersData()}, []
@@ -33,13 +31,15 @@ const App = () => {
   // )
 
   const getBoardData = () => {
-    //call to database
-    setBoard(sampleBoard)
+    axios.get('/board')
+      .then(board => setBoard(board.data[0].grid))
+      .catch(console.log)
   }
 
   const getPlayersData = () => {
-    //call to database
-    setList(players)
+    axios.get('players')
+      .then(players => setList(players.data))
+      .catch(console.log)
   }
 
   const selectPlayer = (i) => {
@@ -81,17 +81,17 @@ const App = () => {
     displayAlert()
   }
 
-  const highlightSquares = () => {
-    let boardCopy = [...board]
-    if (currentPlayer) {
-      let obj = currentPlayer.squares
-      for (let key in obj) {
-        let value = obj[key]
-        let el = document.querySelector(`#A${value}`)
-        el.style.backgroundColor = "#FFFCCB"
-      }
-    }
-  }
+  // const highlightSquares = () => {
+  //   let boardCopy = [...board]
+  //   if (currentPlayer) {
+  //     let obj = currentPlayer.squares
+  //     for (let key in obj) {
+  //       let value = obj[key]
+  //       let el = document.querySelector(`#A${value}`)
+  //       el.style.backgroundColor = "#FFFCCB"
+  //     }
+  //   }
+  // }
 
   // const removeHighlight = () => {
   //   if (previousPlayer) {
