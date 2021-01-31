@@ -53,6 +53,12 @@ module.exports = {
       .catch(err => cb(err))
   },
 
+  updatePlayer(query, player, cb) {
+    Players.findOneAndUpdate(query, player)
+      .then(success => cb(null, success))
+      .catch(err => cb(err))
+  },
+
   deletePlayer(player, cb) {
     Players.deleteOne(player)
       .then(success => cb(null, success))
