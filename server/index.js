@@ -77,8 +77,6 @@ app.delete('/player', (req, res) => {
 })
 
 
-
-
 app.listen(PORT, (err) => {
   if (err) {
     console.log(err)

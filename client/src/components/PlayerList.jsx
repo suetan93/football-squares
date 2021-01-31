@@ -41,7 +41,7 @@ const PlayerList = ({ grid, players, selectPlayer, currentPlayer, addNewPlayer, 
         </div>
         <div className="flip">
           <div className="players">
-            {players ? players.map((player, i) => (<PlayerEntry player={player} key={i} selectPlayer={() => selectPlayer(i)} />)) : 'No players'}
+            {players.length > 0 ? players.map((player, i) => <PlayerEntry player={player} key={i} selectPlayer={() => selectPlayer(i)} />) : <p align="center" style={{fontStyle: "italic"}}>no players</p>}
           </div>
         </div>
       </div>

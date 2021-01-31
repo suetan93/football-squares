@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';``
+import axios from 'axios';
 import Board from './Board.jsx';
 import PlayerList from './PlayerList.jsx';
 import Scores from './Scores.jsx';

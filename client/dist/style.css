@@ -317,12 +317,14 @@ input:placeholder-shown {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   height: 40px;
+  width: 40px;
   padding: 0px;
+  text-transform: none;
 }
 
-.square:hover {
+/* .square:hover {
   border: 1px solid;
-}
+} */
 
 .highlight {
   background-color: #ffffe0;
