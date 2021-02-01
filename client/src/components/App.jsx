@@ -157,7 +157,10 @@ const App = () => {
     <div className="app">
       {showAlert ? <AlertBox displayAlert={displayAlert} deletePlayer={deletePlayer} /> : null}
       <header>
-        <p className="main-title">SUPER BOWL LV SQUARES</p>
+        <div>
+        <p className="main-title">SUPER BOWL LV SQUARES </p>
+        <p id="sub-title">FEBRUARY 7, 2021</p>
+        </div>
       </header>
       <br />
       <main className="content">
