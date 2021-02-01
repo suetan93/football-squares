@@ -1,3 +1,11 @@
+/*
+COLORS:
+
+Light purple: #a36ba377
+Light pink: #d87081a6
+Headings pink: #d87081
+*/
+
 body {
   font-family: arial, sans-serif;
   background-color: rgb(12, 12, 12);
@@ -94,7 +102,7 @@ input:placeholder-shown {
 
 .headings {
   background-color:rgb(0, 0, 0);
-  color: rgb(216, 112, 129);
+  color: #d87081;
   font-weight: bold;
   font-size: 14px;
   letter-spacing: 1px;
@@ -136,7 +144,6 @@ input:placeholder-shown {
 }
 
 .current-info, .player-info {
-  border: 0px dashed green;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -216,7 +223,6 @@ input:placeholder-shown {
   background-color: white;
   display: grid;
   grid-template: repeat(14, 1fr) / repeat(14, 1fr);
-  border: 0px solid blue;
   padding: 5px;
   height: 560px;
   width: 560px;
@@ -239,7 +245,6 @@ input:placeholder-shown {
   border: 0px dashed blue;
 }
 
-
 .afc {
   grid-row: 4 / 5;
   grid-column: 5 / 15;
@@ -252,7 +257,6 @@ input:placeholder-shown {
   grid-row: 3 / 4;
   grid-column: 5 / 15;
   display: grid;
-  /* border: 1px dashed blue; */
   grid-template: 1fr / repeat(10, 1fr);
 }
 
@@ -260,7 +264,6 @@ input:placeholder-shown {
   grid-row: 5 / 15;
   grid-column: 4 / 5;
   display: grid;
-  /* border: 1px dashed blue; */
   grid-template: repeat(10, 1fr) / 1fr;
 }
 
@@ -268,7 +271,6 @@ input:placeholder-shown {
   grid-row: 5 / 15;
   grid-column: 3 / 4;
   display: grid;
-  /* border: 1px dashed blue; */
   grid-template: repeat(10, 1fr) / 1fr;
 }
 
@@ -290,11 +292,11 @@ input:placeholder-shown {
 }
 
 .first-half {
-  background-color:rgba(216, 112, 129, 0.651);
+  background-color: #a36ba377;
 }
 
 .final {
-  background-color:rgba(163, 107, 163, 0.466);
+  background-color: #d87081a6;
 }
 
 .grid {
@@ -369,7 +371,7 @@ input:placeholder-shown {
   text-align: center;
   font-weight: bold;
   font-style: italic;
-  background-color: #d87081a6;
+  background-color: #a36ba377;
 }
 
 .winner2 {
@@ -379,7 +381,7 @@ input:placeholder-shown {
   text-align: center;
   font-weight: bold;
   font-style: italic;
-  background-color: #a36ba377;
+  background-color: #d87081a6;
 }
 
 .main-title {
@@ -425,14 +427,14 @@ input:placeholder-shown {
   height: 15px;
   width: 15px;
   margin-right: 5px;
-  background-color: #d87081a6;
+  background-color: #a36ba377;
 }
 
 .prize-square2 {
   height: 15px;
   width: 15px;
   margin-right: 5px;
-  background-color: #a36ba377;
+  background-color: #d87081a6;
 }
 
 @keyframes moveInLeft {

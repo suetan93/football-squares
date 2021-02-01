@@ -24,16 +24,16 @@ const Board = ({ squares, handleClick }) => {
             {<img width="80" src="images/bucs-logo.jpg" />}
           </div>
           <div className="afc">
-            {afc.map((box, i) => (<div className="numbers first-half" key={i}>{box}</div>) )}
-          </div>
-          <div className="afc2">
             {afc.map((box, i) => (<div className="numbers final" key={i}>{box}</div>) )}
           </div>
+          <div className="afc2">
+            {afc.map((box, i) => (<div className="numbers first-half" key={i}>{box}</div>) )}
+          </div>
           <div className="nfc">
-            {nfc.map((box, i) => (<div className="numbers first-half" key={i}>{box}</div>) )}
+            {nfc.map((box, i) => (<div className="numbers final" key={i}>{box}</div>) )}
           </div>
           <div className="nfc2">
-            {nfc.map((box, i) => (<div className="numbers final" key={i}>{box}</div>) )}
+            {nfc.map((box, i) => (<div className="numbers first-half" key={i}>{box}</div>) )}
           </div>
           <div className="blank-box">
             {blank.map((box, i) => <div className="empty" key={i}></div>)}
