@@ -14,7 +14,7 @@ const PlayerEntry = ({ player, selectPlayer }) => {
         {player.count}
       </div>
       <div className="player-info">
-        <button onClick={selectPlayer}>Select</button>
+        <button onClick={selectPlayer} title="Select Player">Select</button>
       </div>
     </div>
   )

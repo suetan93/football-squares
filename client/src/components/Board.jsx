@@ -14,14 +14,14 @@ const Board = ({ squares, handleClick }) => {
         </div>
         <div className="board">
           <div className="logo-afc">
-            {<img width="80" height="80" src="images/afclogo.jpg" />}
+            {<img width="80" height="80" src="images/afclogo.jpg" alt="AFC Logo"/>}
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            {<img height="75" src="images/chiefs-logo.jpg" />}
+            {<img height="75" src="images/chiefs-logo.jpg" alt="Chiefs Logo" />}
           </div>
           <div className="logo-nfc">
-            {<img width="80" height="80" src="images/nfclogo.jpg" />}
+            {<img width="80" height="80" src="images/nfclogo.jpg" alt="NFC Logo" />}
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            {<img width="80" src="images/bucs-logo.jpg" />}
+            {<img width="80" src="images/bucs-logo.jpg" alt="Bucs Logo" />}
           </div>
           <div className="afc">
             {afc.map((box, i) => (<div className="numbers final" key={i}>{box}</div>) )}

@@ -5,7 +5,7 @@ const AlertBox = ({ displayAlert, deletePlayer }) => {
   return (
     <div className="alert">
       <div className="message">
-        <h4>Are you sure you want to remove player?</h4>
+        <h4>Are you sure you want to delete player?</h4>
         <p>All player data and squares will be removed.</p>
         <div align="right">
           <button onClick={deletePlayer}>YES</button> <button onClick={displayAlert}>CANCEL</button>

@@ -25,7 +25,7 @@ const PlayerList = ({ grid, players, selectPlayer, clearPlayer, currentPlayer, a
           </div>
         </div>
         <div align="center">
-          {currentPlayer ? <button id="delete" title="Delete Player" onClick={displayAlert}>Delete Player</button> : null}
+          {currentPlayer ? <button id="delete" title="Delete Player" onClick={displayAlert} disabled>Delete Player</button> : null}
           {!showForm && !currentPlayer ? <button id="add" onClick={displayForm}>Add New Player</button> : null}
           {showForm ? <AddForm players={players} displayForm={displayForm} addNewPlayer={addNewPlayer} /> : null}
         </div>
