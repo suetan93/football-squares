@@ -2,9 +2,11 @@ import React, { useState }  from 'react';
 import Square from './Squares.jsx';
 
 const Board = ({ squares, handleClick, playerSquares }) => {
-  const afc = new Array(10).fill('-');
-  const nfc = new Array(10).fill('-');
-  const blank = new Array(4).fill(null);
+  const afc = [9, 7, 1, 6, 2, 5, 8, 4, 3, 0];
+  const afc2 = [3, 0, 9, 2, 5, 8, 6, 1, 4, 7];
+  const nfc = [4, 1, 5, 9, 3, 7, 2, 8, 0, 6];
+  const nfc2 = [7, 4, 8, 9, 1, 6, 3, 2, 0, 5];
+  const blank = [3, 8, 1, 0, 4, 6, 7, 9, 2, 5]
 
   return (
     <div className="middle">
@@ -27,13 +29,13 @@ const Board = ({ squares, handleClick, playerSquares }) => {
             {afc.map((box, i) => (<div className="numbers final" key={i}>{box}</div>) )}
           </div>
           <div className="afc2">
-            {afc.map((box, i) => (<div className="numbers first-half" key={i}>{box}</div>) )}
+            {afc2.map((box, i) => (<div className="numbers first-half" key={i}>{box}</div>) )}
           </div>
           <div className="nfc">
             {nfc.map((box, i) => (<div className="numbers final" key={i}>{box}</div>) )}
           </div>
           <div className="nfc2">
-            {nfc.map((box, i) => (<div className="numbers first-half" key={i}>{box}</div>) )}
+            {nfc2.map((box, i) => (<div className="numbers first-half" key={i}>{box}</div>) )}
           </div>
           <div className="blank-box">
             {blank.map((box, i) => <div className="empty" key={i}></div>)}
