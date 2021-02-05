@@ -1,8 +1,13 @@
 import React from 'react';
+import classNames from 'classnames';
 
-const Square = ({ index, value, handleClick }) => {
+const Square = ({ index, value, handleClick, playerSquares }) => {
+  const bttnClass = classNames('square', {
+    'highlight': playerSquares[index]
+  })
+
   return (
-    <button id={`A${index}`} className="square" onClick={handleClick} disabled ><b>{value}</b></button>
+    <button className={bttnClass} onClick={handleClick} disabled ><b>{value}</b></button>
   )
 };
 

@@ -8,7 +8,7 @@ import AlertBox from './AlertBox.jsx'
 const App = () => {
   const [board, setBoard] = useState(new Array(100).fill(''));
   const [currentPlayer, setPlayer] = useState(null);
-  const [currentSquares, setSquares] = useState(null);
+  const [currentSquares, setSquares] = useState({});
   const [playerIndex, setIndex] = useState(null);
   const [playersList, setList] = useState([]);
   const [showForm, setForm] = useState(false);
@@ -24,6 +24,10 @@ const App = () => {
 
   useEffect(() => {
     selectPlayer(playerIndex)}, [playersList]
+  )
+
+  useEffect(() => {
+    selectSquares()}, [currentPlayer]
   )
 
   // useEffect(() => {
@@ -45,7 +49,13 @@ const App = () => {
   const selectPlayer = (i) => {
     setPlayer(playersList[i])
     setIndex(i)
-    // setSquares(playersList[i].squares)
+  }
+
+  const selectSquares = () => {
+    if (currentPlayer) {
+      let squares = {...currentPlayer.squares}
+      setSquares(squares)
+    }
   }
 
   const displayForm = () => {
@@ -98,30 +108,8 @@ const App = () => {
 
   const clearPlayer = () => {
     setPlayer(null)
+    setSquares({})
   }
-
-  // const highlightSquares = () => {
-  //   let boardCopy = [...board]
-  //   if (currentPlayer) {
-  //     let obj = currentPlayer.squares
-  //     for (let key in obj) {
-  //       let value = obj[key]
-  //       let el = document.querySelector(`#A${value}`)
-  //       el.style.backgroundColor = "#FFFCCB"
-  //     }
-  //   }
-  // }
-
-  // const removeHighlight = () => {
-  //   if (previousPlayer) {
-  //     let obj = previousPlayer.squares
-  //     for (let key in obj) {
-  //       let value = obj[key]
-  //       let el = document.querySelector(`#A${value}`)
-  //       el.style.backgroundColor = "#f5f5f5"
-  //     }
-  //   }
-  // }
 
   const handleClick = (i) => {
     let boardCopy = [...board]
@@ -173,7 +161,7 @@ const App = () => {
           displayAlert={displayAlert}
           displayForm={displayForm}
           showForm={showForm} />
-        <Board squares={board} handleClick={handleClick} />
+        <Board squares={board} handleClick={handleClick} playerSquares={currentSquares} />
         <Scores />
       </main>
     </div>

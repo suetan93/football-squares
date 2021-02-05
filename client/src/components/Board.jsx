@@ -1,7 +1,7 @@
 import React, { useState }  from 'react';
 import Square from './Squares.jsx';
 
-const Board = ({ squares, handleClick }) => {
+const Board = ({ squares, handleClick, playerSquares }) => {
   const afc = new Array(10).fill('-');
   const nfc = new Array(10).fill('-');
   const blank = new Array(4).fill(null);
@@ -39,7 +39,7 @@ const Board = ({ squares, handleClick }) => {
             {blank.map((box, i) => <div className="empty" key={i}></div>)}
           </div>
           <div className="grid">
-            {squares.map((square, i) => (<Square key={i} index={i} value={square} handleClick={() => handleClick(i)}/>))}
+            {squares.map((square, i) => (<Square key={i} index={i} value={square} playerSquares={playerSquares} handleClick={() => handleClick(i)}/>))}
           </div>
         </div>
       </div>

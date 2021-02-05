@@ -1,6 +1,5 @@
 /*
 COLORS:
-
 Light purple: #a36ba377
 Light pink: #d87081a6
 Headings pink: #d87081
@@ -321,14 +320,6 @@ input:placeholder-shown {
   text-transform: none;
 }
 
-/* .square:hover {
-  border: 1px solid;
-} */
-
-.highlight {
-  background-color: #ffffe0;
-}
-
 /* Right side scores */
 .scores {
   padding: 4px;
@@ -348,7 +339,7 @@ input:placeholder-shown {
 }
 
 .winners {
-  height: 97px;
+  height: 98px;
 }
 
 .innerbox {
@@ -437,6 +428,21 @@ input:placeholder-shown {
   background-color: #d87081a6;
 }
 
+/* other */
+
+ul {
+  padding-left: 15px;
+  list-style-type: square;
+}
+
+.highlight {
+  background-color: #ecc38d
+}
+
+.highlight:hover {
+  background-color: #ecc38d;
+}
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -457,9 +463,4 @@ input:placeholder-shown {
   100% {
     height: 280px;
   }
-}
-
-ul {
-  padding-left: 15px;
-  list-style-type: square;
 }
