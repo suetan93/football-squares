@@ -13,7 +13,7 @@ const App = () => {
   const [playersList, setList] = useState([]);
   const [showForm, setForm] = useState(false);
   const [showAlert, setAlert] = useState(false);
-  const [winner, setWinner] = useState({'winner1': 46, 'winner2': null})
+  const [winner, setWinner] = useState({'winner1': 46, 'winner2': 10})
 
   useEffect(() => {
     getBoardData()}, []
