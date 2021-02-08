@@ -345,7 +345,8 @@ input:placeholder-shown {
 
 .innerbox {
   padding: 5px;
-  width: 190px;
+  border: 0px solid red;
+  width: 200px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -354,21 +355,22 @@ input:placeholder-shown {
 .innerbox1, .innerbox2 {
   padding: 5px;
   width: 90px;
+  border: 0px dashed blue;
 }
 
 .winner1 {
   padding: 5px;
-  width: 80px;
+  width: 85px;
   color: white;
   text-align: center;
+  font-size: 12px;
   font-weight: bold;
-  font-style: italic;
   background-color: #a36ba377;
 }
 
 .winner2 {
   padding: 5px;
-  width: 80px;
+  width: 85px;
   color: white;
   text-align: center;
   font-weight: bold;
@@ -436,12 +438,29 @@ ul {
   list-style-type: square;
 }
 
+
 .highlight {
   background-color: #ecc38d
 }
 
 .highlight:hover {
   background-color: #ecc38d;
+}
+
+.fWinner {
+  background-color: #a36ba377;
+}
+
+.fWinner:hover {
+  background-color: #a36ba377;
+}
+
+.secondWinner {
+  background-color: #d87081a6;
+}
+
+.secondWinner:hover {
+  background-color: #d87081a6;
 }
 
 @keyframes moveInLeft {

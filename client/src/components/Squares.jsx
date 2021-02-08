@@ -1,9 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const Square = ({ index, value, handleClick, playerSquares }) => {
+const Square = ({ winner, index, value, handleClick, playerSquares }) => {
+  console.log(winner)
   const bttnClass = classNames('square', {
-    'highlight': playerSquares[index]
+    'highlight': playerSquares[index],
+    'fWinner': winner.winner1 === index,
+    'secondWinner': winner.winner2 === index
+
   })
 
   return (

@@ -48,7 +48,7 @@ const Scores = () => {
             <b>1ST HALF: </b>
           </div>
           <div className="winner1">
-            TBD
+            LILLIAN (LN)
           </div>
           <div className="innerbox2" align="right">
             <b>FINAL SCORE:</b>

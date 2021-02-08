@@ -13,6 +13,7 @@ const App = () => {
   const [playersList, setList] = useState([]);
   const [showForm, setForm] = useState(false);
   const [showAlert, setAlert] = useState(false);
+  const [winner, setWinner] = useState({'winner1': 46, 'winner2': null})
 
   useEffect(() => {
     getBoardData()}, []
@@ -161,7 +162,7 @@ const App = () => {
           displayAlert={displayAlert}
           displayForm={displayForm}
           showForm={showForm} />
-        <Board squares={board} handleClick={handleClick} playerSquares={currentSquares} />
+        <Board squares={board} winner={winner} handleClick={handleClick} playerSquares={currentSquares} />
         <Scores />
       </main>
     </div>
