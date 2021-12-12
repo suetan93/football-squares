@@ -5,7 +5,6 @@ Every year I host a game of Super Bowl Squares with my friends. I usually set it
 Features I would like to implement in the future:
   * Real time scores and updates through a public API
   * Real time winner tracking
-  * Responsive columns
   * Allow users to style font and color
 
 **Live:** https://football-squares.herokuapp.com/
