@@ -7,7 +7,6 @@ Features I would like to implement in the future:
   * Real time winner tracking
   * Allow users to style font and color
 
-**Live:** https://football-squares.herokuapp.com/
 
 ## Technologies
  * React
